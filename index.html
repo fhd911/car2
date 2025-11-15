@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>السيارة الحديثة</title>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            background: #F9F9F9;
+        }
+
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #004e7c;
+            font-size: 38px;
+        }
+
+        .car-box {
+            width: 80%;
+            margin: 30px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 25px;
+        }
+    </style>
+
+    <script>
+        function includeHTML(id, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                });
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- هيدر من ملف خارجي -->
+    <div id="header"></div>
+    <script> includeHTML("header", "header.html"); </script>
+
+    <div class="content">
+        <h1>مرحبًا بكم في موقع السيارة الحديثة</h1>
+        <p>أفضل منصة لبيع السيارات وقطع الغيار بأفضل الأسعار</p>
+
+        <div class="car-box">
+            <h2>أحدث العروض</h2>
+            <p>سيارات مميزة — موديلات حديثة — أسعار مناسبة</p>
+        </div>
+    </div>
+
+    <!-- فوتر خارجي -->
+    <div id="footer"></div>
+    <script> includeHTML("footer", "footer.html"); </script>
+
+</body>
+</html>

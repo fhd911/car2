@@ -1,0 +1,237 @@
+<!-- header.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- الشريط العلوي -->
+<div class="header-container">
+
+    <!-- الشعار -->
+    <div class="logo">
+        <div class="logo-circle">
+            <img src="car2logo.png" alt="Logo">
+        </div>
+        <span class="logo-text">السيارة الحديثة</span>
+    </div>
+
+    <!-- قائمة الكمبيوتر -->
+    <nav class="nav desktop-nav">
+        <a href="index.html">
+            <div class="icon-box"><i class="fa-solid fa-house"></i></div>
+            <span>الرئيسية</span>
+        </a>
+
+        <a href="#">
+            <div class="icon-box"><i class="fa-solid fa-car"></i></div>
+            <span>السيارات</span>
+        </a>
+
+        <a href="#">
+            <div class="icon-box"><i class="fa-solid fa-gears"></i></div>
+            <span>قطع الغيار</span>
+        </a>
+
+        <a href="contact.html">
+            <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+            <span>اتصل بنا</span>
+        </a>
+    </nav>
+
+    <!-- زر الجوال (برجر) -->
+    <div class="burger" onclick="openMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+</div>
+
+
+<!-- القائمة الجانبية -->
+<div id="mobileMenu" class="mobile-menu">
+
+    <div class="menu-header">
+        <span class="menu-title">القائمة</span>
+
+        <!-- زر الإغلاق داخل القائمة -->
+        <div class="close-btn" onclick="closeMenu()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+
+    <a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a>
+    <a href="#"><i class="fa-solid fa-car"></i> السيارات</a>
+    <a href="#"><i class="fa-solid fa-gears"></i> قطع الغيار</a>
+    <a href="contact.html"><i class="fa-solid fa-phone"></i> اتصل بنا</a>
+
+</div>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* الهيدر */
+.header-container {
+    width: 100%;
+    padding: 12px 40px;
+    background: linear-gradient(90deg, #5EC4F3, #89D2EC);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    direction: rtl;
+}
+
+/* الشعار */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-circle {
+    width: 55px;
+    height: 55px;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.20);
+}
+
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-text {
+    font-size: 26px;
+    font-weight: 700;
+    color: #003F5C;
+}
+
+/* روابط الكمبيوتر */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: #003F5C;
+    font-weight: 600;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.25s;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0077A4;
+    font-size: 18px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+}
+
+/* زر البرجر للجوال */
+.burger {
+    display: none;
+    color: #003F5C;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* القائمة الجانبية */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 260px;
+    height: 100%;
+    background: white;
+    border-radius: 20px 0 0 20px;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: 0.4s ease;
+    z-index: 9999;
+    direction: rtl;
+}
+
+/* رأس القائمة */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.menu-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #00597A;
+}
+
+/* زر الإغلاق الجديد */
+.close-btn {
+    background: #F0F2F3;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+.close-btn i {
+    color: #00597A;
+    font-size: 22px;
+}
+
+/* روابط القائمة */
+.mobile-menu a {
+    display: block;
+    padding: 15px 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #003F5C;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.mobile-menu a i {
+    margin-left: 10px;
+    color: #0077A4;
+}
+
+/* إخفاء القائمة على الكمبيوتر */
+@media(max-width: 850px) {
+    .desktop-nav {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+}
+</style>
+
+<script>
+function openMenu() {
+    document.getElementById("mobileMenu").style.right = "0";
+}
+
+function closeMenu() {
+    document.getElementById("mobileMenu").style.right = "-300px";
+}
+</script>

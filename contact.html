@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>اتصل بنا - السيارة الحديثة</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #C2E7F7, #E6F4FA);
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 120px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        h2 {
+            color: #005B7A;
+            margin-bottom: 25px;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 14px;
+            margin-bottom: 14px;
+            border-radius: 12px;
+            border: 1px solid #C7DADF;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #5EC4F3;
+            outline: none;
+            box-shadow: 0 0 5px rgba(94,196,243,0.8);
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .btn {
+            width: 95%;
+            background: #5EC4F3;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            background: #4CB5E8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- استدعاء الهيدر -->
+    <div id="header"></div>
+    <script>
+        fetch("header.html").then(res => res.text()).then(data => {
+            document.getElementById("header").innerHTML = data;
+        });
+    </script>
+
+    <div class="container">
+        <h2>نموذج الاتصال</h2>
+
+        <input type="text" placeholder="الاسم الكامل">
+        <input type="text" placeholder="رقم الجوال">
+        <textarea placeholder="اكتب رسالتك هنا"></textarea>
+
+        <button class="btn">إرسال الرسالة</button>
+    </div>
+
+</body>
+</html>
