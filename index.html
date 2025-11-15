@@ -1,66 +1,92 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>السيارة الحديثة</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Cairo', sans-serif;
             margin: 0;
-            background: #F9F9F9;
+            font-family: 'Tajawal', sans-serif;
+            background: #F6F9FC;
         }
 
+        /* الحاوية العامة */
         .content {
-            padding: 50px;
+            max-width: 900px;
+            margin: 120px auto 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             text-align: center;
         }
 
         h1 {
-            color: #004e7c;
-            font-size: 38px;
+            color: #004E6E;
+            margin-bottom: 10px;
         }
 
-        .car-box {
-            width: 80%;
-            margin: 30px auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        p {
+            color: #444;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .box {
+            margin-top: 40px;
+            background: #ffffff;
             padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+            font-size: 20px;
+            color: #015581;
+            font-weight: 700;
         }
     </style>
-
-    <script>
-        function includeHTML(id, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(id).innerHTML = data;
-                });
-        }
-    </script>
 </head>
 
 <body>
 
-    <!-- هيدر من ملف خارجي -->
+    <!-- الهيدر سيتم تحميله تلقائياً -->
     <div id="header"></div>
-    <script> includeHTML("header", "header.html"); </script>
 
+    <!-- المحتوى الرئيسي -->
     <div class="content">
-        <h1>مرحبًا بكم في موقع السيارة الحديثة</h1>
-        <p>أفضل منصة لبيع السيارات وقطع الغيار بأفضل الأسعار</p>
+        <h1>مرحباً بكم في موقع السيارة الحديثة</h1>
+        <p>
+            أفضل منصة لعرض السيارات وقطع الغيار بأفضل الأسعار والعروض المميزة.  
+        </p>
 
-        <div class="car-box">
-            <h2>أحدث العروض</h2>
-            <p>سيارات مميزة — موديلات حديثة — أسعار مناسبة</p>
+        <div class="box">
+            أحدث العروض 🚗💨  
         </div>
     </div>
 
-    <!-- فوتر خارجي -->
+    <!-- الفوتر سيتم تحميله تلقائياً -->
     <div id="footer"></div>
-    <script> includeHTML("footer", "footer.html"); </script>
+
+    <!-- تحميل الهيدر والفوتر -->
+    <script>
+        // تحميل الهيدر
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            });
+
+        // تحميل الفوتر
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
 
 </body>
 </html>
