@@ -10,7 +10,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h6(0l65tv1-olitk0b#a4(w0(hsez0kjlf41+*q!rr_lajn)h&'
 
@@ -20,7 +19,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# --------------------------------
+#      Application definition
+# --------------------------------
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -30,17 +31,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # أضف التطبيقات الجديدة هنا
-    # 'core',
-    # 'accounts',
-    # 'products',
-    # 'orders',
+    # ⭐ التطبيقات الخاصة بالمشروع
+    'core',
+    'accounts',
+    'shop',
+    'orders',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',  # دعم اللغات
+    'django.middleware.locale.LocaleMiddleware',  # دعم اللغة
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -53,7 +55,10 @@ ROOT_URLCONF = 'car2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # مجلد القوالب الرئيسي
+
+        # ⭐ مجلد القوالب الرئيسي
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,7 +73,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'car2.wsgi.application'
 
 
-# Database
+# --------------------------------
+#            Database
+# --------------------------------
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -77,7 +85,10 @@ DATABASES = {
 }
 
 
-# Password validation
+# --------------------------------
+#     Password validation
+# --------------------------------
+
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -86,17 +97,22 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# 🌍 اللغة والتوقيت (كما طلبت)
+# --------------------------------
+#   اللغة والتوقيت (كما طلبت)
+# --------------------------------
 LANGUAGE_CODE = 'ar'
-
 TIME_ZONE = 'Asia/Riyadh'
 
 USE_I18N = True
+USE_L10N = True
 USE_TZ = True
 
 
-# 📁 الملفات الثابتة
+# --------------------------------
+#       Static files (CSS, JS)
+# --------------------------------
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
@@ -104,5 +120,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-# Default primary key field type
+# --------------------------------
+#     Default primary key field
+# --------------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
